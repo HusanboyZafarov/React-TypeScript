@@ -1,7 +1,7 @@
 import React from 'react';
 
 const ListGroup = () => {
-  const items = [
+  let items = [
     'New York',
     'San Francisco',
     'Tokyo',
@@ -9,15 +9,21 @@ const ListGroup = () => {
     'Paris',
     'Andijan'
   ];
+
   return (
     <>
-      <h1>Hello World</h1>
-      <ul className='list-group'>
-        <li className='list-group-item'></li>
-        <li className='list-group-item'>A second item</li>
-        <li className='list-group-item'>A third item</li>
-        <li className='list-group-item'>A fourth item</li>
-        <li className='list-group-item'>And a fifth one</li>
+      <h1>List</h1>
+      {items.length === 0 && <p>No item found</p>}
+      <ul className='list-group container'>
+        {items.map((item) => (
+          <li
+            className='list-group-item'
+            onClick={(event) => console.log(event)}
+            key={item}
+          >
+            {item}
+          </li>
+        ))}
       </ul>
     </>
   );
