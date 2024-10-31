@@ -1,6 +1,14 @@
 import React from 'react';
 
 const ListGroup = () => {
+  const items = [
+    'New York',
+    'San Francisco',
+    'Tokyo',
+    'London',
+    'Paris',
+    'Andijan'
+  ];
   return (
     <>
       <h1>Hello World</h1>
