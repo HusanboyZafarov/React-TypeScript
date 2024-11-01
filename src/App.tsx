@@ -1,6 +1,6 @@
 import Button from './components/Button';
 import Alert from './components/Alert';
-import ListGroup from './components/ListGroup/ListGroup';
+import ListGroup from './components/ListGroup';
 import { useState } from 'react';
 
 function App() {
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className='container py-5'>
-      {alertVisible && (
+      {/* {alertVisible && (
         <Alert onChangeVisible={handleAlertVisible} color={color}>
           The message is here
         </Alert>
@@ -38,7 +38,7 @@ function App() {
 
       <Button color={color} onClick={handleAlertVisible}>
         {alertVisible ? 'Close' : 'Open'}
-      </Button>
+      </Button> */}
 
       <ListGroup
         heading='Miami'
