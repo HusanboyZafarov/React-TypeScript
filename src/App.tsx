@@ -3,30 +3,38 @@ import Alert from './components/Alert';
 import ListGroup from './components/ListGroup';
 import Like from './components/Like';
 import { useState } from 'react';
+import Form from './components/Form';
 
 function App() {
-  type ColorType =
-    | 'primary'
-    | 'secondary'
-    | 'danger'
-    | 'warning'
-    | 'success'
-    | 'info'
-    | 'dark'
-    | 'light';
+  // type ColorType =
+  //   | 'primary'
+  //   | 'secondary'
+  //   | 'danger'
+  //   | 'warning'
+  //   | 'success'
+  //   | 'info'
+  //   | 'dark'
+  //   | 'light';
 
-  const items = ['New York', 'Los Angles', 'San Francisco'];
+  // const items = ['New York', 'Los Angles', 'San Francisco'];
 
-  const [color, setColor] = useState<ColorType>('primary');
-  const [alertVisible, setAlertVisible] = useState(false);
-  const [index, setIndex] = useState(-1);
+  // const [color, setColor] = useState<ColorType>('primary');
+  // const [alertVisible, setAlertVisible] = useState(false);
+  // const [index, setIndex] = useState(-1);
 
-  const handleAlertVisible = () => {
-    setAlertVisible(!alertVisible);
-  };
+  // const handleAlertVisible = () => {
+  //   setAlertVisible(!alertVisible);
+  // };
 
-  const handleSelect = (index: number) => {
-    setIndex(index);
+  // const handleSelect = (index: number) => {
+  //   setIndex(index);
+  // };
+
+  const [isVisible, setVisibility] = useState(false);
+
+  const handleClick = async () => {
+    setVisibility(true);
+    console.log(isVisible);
   };
 
   return (
@@ -47,7 +55,11 @@ function App() {
         onSelectItem={() => handleSelect}
       /> */}
 
-      <Like onClick={() => console.log('Clicked')} />
+      {/* <Like onClick={() => console.log('Clicked')} /> */}
+
+      {/* <Form /> */}
+
+      <button onClick={handleClick}>show</button>
     </div>
   );
 }
