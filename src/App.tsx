@@ -1,12 +1,13 @@
-import Button from "./components/Button/Button";
-import Alert from "./components/Alert";
-import ListGroup from "./components/ListGroup";
-import Like from "./components/Like";
-import { useState } from "react";
-import Form from "./components/Form";
-import { produce } from "immer";
-import Cart from "./components/Cart";
-import Navbar from "./components/Navbar";
+import Button from './components/Button/Button';
+import Alert from './components/Alert';
+import ListGroup from './components/ListGroup';
+import Like from './components/Like';
+import { useState } from 'react';
+import Form from './components/Form';
+import { produce } from 'immer';
+import Cart from './components/Cart';
+import Navbar from './components/Navbar';
+import ExpandableText from './components/ExpandableText';
 
 function App() {
   // type ColorType =
@@ -62,27 +63,27 @@ function App() {
   // },
   // });
 
-  const [cart, setCart] = useState({
-    discount: 0.1,
-    items: [
-      { id: 1, title: "Product 1", quantity: 1 },
-      { id: 2, title: "Product 1", quantity: 1 },
-    ],
-  });
+  // const [cart, setCart] = useState({
+  //   discount: 0.1,
+  //   items: [
+  //     { id: 1, title: "Product 1", quantity: 1 },
+  //     { id: 2, title: "Product 1", quantity: 1 },
+  //   ],
+  // });
 
-  const handleUpdate = () => {
-    // setGame({ ...game, player: { ...game.player, name: "Bob" } });
-    // setPizza({ ...pizza, toppings: [...pizza.toppings, "Sausage"] });
-    setCart({
-      ...cart,
-      items: cart.items.map((item) =>
-        item.id === 1 ? { ...item, quantity: 2 } : item
-      ),
-    });
-  };
+  // const handleUpdate = () => {
+  // setGame({ ...game, player: { ...game.player, name: "Bob" } });
+  // setPizza({ ...pizza, toppings: [...pizza.toppings, "Sausage"] });
+  // setCart({
+  //   ...cart,
+  //   items: cart.items.map((item) =>
+  //     item.id === 1 ? { ...item, quantity: 2 } : item
+  //   ),
+  // });
+  // };
 
   return (
-    <div className="container py-5">
+    <div className='container-fluid'>
       {/* {alertVisible && (
         <Alert onChangeVisible={handleAlertVisible} color={color}>
           The message is here
@@ -116,9 +117,23 @@ function App() {
       {/* <Navbar cartItemsCount={cartItems.length} /> */}
       {/* <Cart onClear={handleClear} cartItems={cartItems} /> */}
 
-      <button className="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 ">
+      {/* <button className="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 ">
         Click me
-      </button>
+      </button> */}
+
+      <ExpandableText maxChars={20}>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, at neque
+        ad magnam praesentium libero adipisci nesciunt voluptatibus! Suscipit
+        pariatur illum eius ut dolorum excepturi quibusdam, nostrum aut in
+        architecto facere quo ducimus deleniti soluta sed doloremque consectetur
+        reiciendis aliquam dolorem, exercitationem esse reprehenderit. Modi
+        magni quia alias, aliquid obcaecati omnis dolore mollitia ullam quae non
+        saepe quam harum reprehenderit unde ipsam eaque? Quis dolorum tenetur
+        maiores possimus doloremque placeat cumque est maxime nostrum iure in
+        blanditiis sint, cum consectetur excepturi aliquid. Corrupti voluptas
+        atque minus quisquam accusamus alias aut quos animi. Repellat nobis
+        doloribus, voluptatum sint dignissimos facilis nulla.
+      </ExpandableText>
     </div>
   );
 }
