@@ -84,56 +84,7 @@ function App() {
 
   return (
     <div className='container-fluid'>
-      {/* {alertVisible && (
-        <Alert onChangeVisible={handleAlertVisible} color={color}>
-          The message is here
-        </Alert>
-      )} */}
-
-      {/* <Button color={color} onClick={handleAlertVisible}>
-        {alertVisible ? 'Close' : 'Open'}
-      </Button> */}
-
-      {/* <ListGroup
-        heading='Miami'
-        items={items}
-        onSelectItem={() => handleSelect}
-      /> */}
-
-      {/* <Like onClick={() => console.log('Clicked')} /> */}
-
-      {/* <Form /> */}
-      {/* {bugs.map((bug) => (
-        <p key={bug.id}>
-          {bug.title}{" "}
-          <i>
-            <b>status:</b>
-            {bug.fixed ? "Fixed" : "New"}
-          </i>
-        </p>
-      ))} */}
-      {/* <button onClick={handleClick}>show</button> */}
-
-      {/* <Navbar cartItemsCount={cartItems.length} /> */}
-      {/* <Cart onClear={handleClear} cartItems={cartItems} /> */}
-
-      {/* <button className="inline-flex justify-center rounded-lg text-sm font-semibold py-3 px-4 bg-slate-900 text-white hover:bg-slate-700 ">
-        Click me
-      </button> */}
-
-      <ExpandableText maxChars={20}>
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iste, at neque
-        ad magnam praesentium libero adipisci nesciunt voluptatibus! Suscipit
-        pariatur illum eius ut dolorum excepturi quibusdam, nostrum aut in
-        architecto facere quo ducimus deleniti soluta sed doloremque consectetur
-        reiciendis aliquam dolorem, exercitationem esse reprehenderit. Modi
-        magni quia alias, aliquid obcaecati omnis dolore mollitia ullam quae non
-        saepe quam harum reprehenderit unde ipsam eaque? Quis dolorum tenetur
-        maiores possimus doloremque placeat cumque est maxime nostrum iure in
-        blanditiis sint, cum consectetur excepturi aliquid. Corrupti voluptas
-        atque minus quisquam accusamus alias aut quos animi. Repellat nobis
-        doloribus, voluptatum sint dignissimos facilis nulla.
-      </ExpandableText>
+      <Form></Form>
     </div>
   );
 }
