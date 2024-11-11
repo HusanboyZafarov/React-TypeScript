@@ -21,12 +21,10 @@
   */
 }
 
-import { useEffect, useState } from 'react';
-import { CanceledError } from './services/api-client';
+import useUser from './hooks/useUser';
 import UserService, { User } from './services/user-service';
-import userService from './services/user-service';
-
 function App() {
+  const { users, error, isLoading, setUsers, setError, setLoading } = useUser();
   {
     /*
     // type ColorType =
@@ -156,33 +154,11 @@ function App() {
   <ProductList category={category} /> */
   }
 
-  const [users, setUsers] = useState<User[]>([]);
-  const [error, setError] = useState('');
-  const [isLoading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    const { request, cancel } = UserService.getAllUsers();
-    request
-      .then((res) => {
-        setUsers(res.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        if (error instanceof CanceledError) return;
-        setError(error.message);
-        setLoading(false);
-      });
-
-    return () => cancel();
-  }, []);
-
   const deleteUser = (user: User) => {
     const originalUsers = [...users];
     setUsers([...users.filter((u) => u.id !== user.id)]);
     setLoading(true);
-    userService
-      .deleteUser(user.id)
+    UserService.delete(user.id)
       .then(() => setLoading(false))
       .catch((err) => {
         setError(err.message);
@@ -199,8 +175,7 @@ function App() {
     };
     setUsers([newUser, ...users]);
 
-    userService
-      .addUser(newUser)
+    UserService.create(newUser)
       .then(({ data: saveduser }) => setUsers([saveduser, ...users]))
       .catch((error) => {
         setError(error.message);
@@ -215,7 +190,7 @@ function App() {
 
     setUsers(users.map((u) => (u.id === user.id ? updatedUser : u)));
 
-    userService.updateUser(user.id, updatedUser).catch((err) => {
+    UserService.update(user).catch((err) => {
       console.log(err);
       setUsers(originalUsers);
     });
@@ -257,3 +232,10 @@ function App() {
 }
 
 export default App;
+function setUsers(arg0: any[]) {
+  throw new Error('Function not implemented.');
+}
+
+function setLoading(arg0: boolean) {
+  throw new Error('Function not implemented.');
+}
