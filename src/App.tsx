@@ -10,8 +10,8 @@ import Navbar from './components/Navbar';
 import ExpandableText from './components/ExpandableText';
 import ExpenseList from './expense-tracker/components/ExpenseList';
 import ExpenseFilter from './expense-tracker/components/ExpenseFilter';
-
-const categories = ['Groceries', 'Utilities', 'Entertainment'];
+import ExpenseForm from './expense-tracker/components/ExpenseForm';
+import categories from './expense-tracker/categories';
 
 function App() {
   // type ColorType =
@@ -101,6 +101,13 @@ function App() {
 
   return (
     <div className='container-fluid'>
+      <div className='mb-5 mt-3'>
+        <ExpenseForm
+          onSubmit={(expense) => {
+            setExpenses([...expenses, { ...expense, id: Date.now() }]);
+          }}
+        />
+      </div>
       <div className='my-3'>
         <ExpenseFilter
           onSelectCategory={(category) => setSelectedCategory(category)}
